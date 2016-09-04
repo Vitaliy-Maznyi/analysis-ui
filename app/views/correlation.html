@@ -1,0 +1,27 @@
+<div ng-controller="CorrelationCtrl">
+  <h3>Correlation check between two datasets</h3>
+  <span>Enter 2 arrays of data of equal length.</span>
+  <span>Each array should contain at least 3 different numbers.</span>
+  <div class="panel">
+    <form ng-submit="submit()" class="form-inline" name="correlationForm" >
+      <textarea class="form-control"
+                ng-model="dataset_1"
+                ng-minlength="5"
+                ng-pattern="/^([\+\-]?(\d*\.)?\d+)(,([\+\-]?(\d*\.)?\d+))*$/"
+                rows="2" cols="40"
+                name="dataset_1"
+                placeholder="enter first dataset here" ></textarea>
+      <textarea class="form-control"
+                ng-model="dataset_2"
+                ng-minlength="5"
+                ng-pattern="/^([\+\-]?(\d*\.)?\d+)(,([\+\-]?(\d*\.)?\d+))*$/"
+                rows="2" cols="40"
+                name="dataset_2"
+                placeholder="enter second dataset here" ></textarea>
+      <div class="form-group">
+        <input class="btn btn-lg btn-default" ng-disabled="correlationForm.dataset_1.$invalid || correlationForm.dataset_2.$invalid || !dataset_1 || !dataset_2" type="submit" id="submit" value="Calculate" />
+      </div>
+    </form>
+  </div>
+  <h4>Result: {{correlation}}</h4>
+</div>

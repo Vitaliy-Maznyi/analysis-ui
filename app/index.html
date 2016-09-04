@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Analyse</title>
+  <meta name="generator" content="Bootply" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!--[if lt IE 9]>
+  <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body ng-app="analysisUiApp">
+
+  <div class="container">
+    <h1>Dataset Analysis</h1>
+    <hr>
+    <a ng-show="user.id" ng-href="#/analysis" class="btn btn-default" role="button">Dataset analysis</a>
+    <a ng-show="user.id" ng-href="#/correlation" class="btn btn-default" role="button">Correlation check</a>
+    <div class="pull-right">
+      <a ng-show="!user.id" ng-href="#/sign_in" class="btn btn-default" role="button">Sign in</a>
+      <a ng-show="!user.id" ng-href="#/sign_up" class="btn btn-default" role="button">Sign up</a>
+      <a ng-show="user.id" ng-click='signOut()' class="btn btn-default" role="button">Sign out, {{user.email}}</a>
+    </div>
+    <hr>
+    <div ng-view=""></div>
+  </div>
+
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-cookie/angular-cookie.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/ng-token-auth/dist/ng-token-auth.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/analyze.js"></script>
+  <script src="scripts/controllers/correlation.js"></script>
+  <script src="scripts/controllers/user_sessions.js"></script>
+  <script src="scripts/controllers/user_registrations.js"></script>
+<!-- endbuild -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
+

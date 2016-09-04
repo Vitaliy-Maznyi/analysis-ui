@@ -1,0 +1,27 @@
+<div ng-controller="AnalyzeCtrl">
+  <span>Enter at least 3 numbers without spaces like:</span>
+  <code>1,2,3,4,5,6,7</code>
+  <div class="panel">
+    <form ng-submit="submit()" name="analysis" >
+      <div class="form-group">
+        <textarea class="form-control" rows="2" cols="40"
+                  ng-model="dataset"
+                  ng-minlength="5"
+                  ng-pattern="/^([\+\-]?(\d*\.)?\d+)(,([\+\-]?(\d*\.)?\d+))*$/"
+                  name="dataset"
+                  placeholder="enter dataset here" /></textarea>
+        <input class="btn btn-lg btn-default" style="margin-top: 20px" type="submit" ng-disabled="analysis.dataset.$invalid || !dataset" id="submit" value="Analyze!" />
+      </div>
+    </form>
+  </div>
+  <h2>Results</h2>
+  <div class="panel">
+    <p>Average: {{analysis.average}} </p>
+    <p>Min: {{analysis.min}}</p>
+    <p>Max: {{analysis.max}}</p>
+    <p>Q1: {{analysis.Q1}}</p>
+    <p>Median: {{analysis.median}}</p>
+    <p>Q3: {{analysis.Q3}}</p>
+    <p>Outliers: {{analysis.outliers.join(', ')}}</p>
+  </div>
+</div>
