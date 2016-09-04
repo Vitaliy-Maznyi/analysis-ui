@@ -1,12 +1,7 @@
 # analysis-ui
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+Front-end angular app for rails JSON API [analysis-api](https://github.com/Vitaliy-Maznyi/analysis-api)
 
-## Build & development
+## How to run
 
-Run `grunt` for building and `grunt serve` for preview.
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.
+Run `gulp serve`. App will be available on [http://localhost:9000/](http://localhost:9000/)
