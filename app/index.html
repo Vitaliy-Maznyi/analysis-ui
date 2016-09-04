@@ -14,15 +14,19 @@
 
   <div class="container">
     <h1>Dataset Analysis</h1>
-    <hr>
-    <a ng-show="user.id" ng-href="#/analysis" class="btn btn-default" role="button">Dataset analysis</a>
-    <a ng-show="user.id" ng-href="#/correlation" class="btn btn-default" role="button">Correlation check</a>
-    <div class="pull-right">
-      <a ng-show="!user.id" ng-href="#/sign_in" class="btn btn-default" role="button">Sign in</a>
-      <a ng-show="!user.id" ng-href="#/sign_up" class="btn btn-default" role="button">Sign up</a>
-      <a ng-show="user.id" ng-click='signOut()' class="btn btn-default" role="button">Sign out, {{user.email}}</a>
-    </div>
-    <hr>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <ul class="nav navbar-nav">
+                  <li><a ng-show="user.id" ng-href="#/analysis" class="active">Dataset analysis</a></li>
+                  <li><a ng-show="user.id" ng-href="#/correlation" >Correlation check</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a ng-show="!user.id" ng-href="#/sign_in" ><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+                  <li><a ng-show="!user.id" ng-href="#/sign_up" ><span class="glyphicon glyphicon-user"></span> Sign up</a></li>
+                  <li><a ng-show="user.id" ng-click='signOut()' role="button" ><span class="glyphicon glyphicon-log-out"></span> Sign out, {{user.email}}</a></li>
+              </ul>
+          </div>
+      </nav>
     <div ng-view=""></div>
   </div>
 

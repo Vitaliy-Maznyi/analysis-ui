@@ -53,7 +53,7 @@ angular
   })
   .config(function($authProvider) {
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000/api'
+      apiUrl: 'https://dataset-analysis.herokuapp.com/api'
     });
   })
   .run(['$rootScope', '$location', function($rootScope, $location) {

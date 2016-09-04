@@ -41,7 +41,7 @@ var paths = {
 ////////////////////////
 
 var lintScripts = lazypipe()
-  .pipe($.jshint, '.jshintrc')
+  .pipe($.jshint, 'test/.jshintrc')
   .pipe($.jshint.reporter, 'jshint-stylish');
 
 var styles = lazypipe()
